@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px;
+  background-color: rgba(232, 234, 236, 0.75);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-left: 7rem;
+  padding-bottom: 2rem;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-name {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.profile-body {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: justify;
+  word-wrap: break-word;
+  background-color: rgb(246, 246, 246);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.profile-description,
+.prof-loc {
+  font-size: 12px;
+  margin-bottom: 20px;
+  color: rgb(82, 74, 74);
+}
+
+.profile-other-info {
+  font-size: 18px;
+  width: fit-content;
+  text-align: center;
+
+  display: inline-block;
+  margin: 0;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(101, 103, 106, 0.8);
+  border-radius: 1rem;
+}
+
+.em-na {
+  display: flex;
+  flex-direction: column;
+}
+#em {
+  margin-left: 0.5rem;
+  color: gray;
+}
+.appoint {
+  border-radius: 1.5rem;
+  font-weight: bold;
+  background-color: rgb(23, 50, 207);
+  padding-right: 3rem;
+  padding-left: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 4rem;
+  max-width: fit-content;
+  color: aliceblue;
+  margin-left: 7rem;
+}
+
+.appoint:hover {
+  background-color: rgb(255, 255, 255);
+}
+
+#co {
+  display: flex;
+  flex-direction: row;
+}
+
+.tags {
+  display: flex;
+  flex-direction: row;
+}
+
+#sp {
+  color: green;
+  margin-left: 5px;
+}

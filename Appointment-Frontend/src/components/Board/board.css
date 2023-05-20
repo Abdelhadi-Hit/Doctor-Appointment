@@ -1,0 +1,16 @@
+.appointment-table {
+  color: white;
+  background-color: black;
+}
+
+.appointment-row {
+  background-color: rgb(226, 169, 169);
+  color: black;
+}
+
+.appointment-row td,
+.appointment-row th {
+  padding: 10px;
+
+  margin-left: 12rem;
+}

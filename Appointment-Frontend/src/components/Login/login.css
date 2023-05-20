@@ -1,0 +1,138 @@
+.login {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login .card {
+  width: 80%;
+  height: 60%;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.login .card .left {
+  flex: 1;
+  background: linear-gradient(rgba(5, 8, 152, 0.5), rgba(29, 9, 255, 0.5)),
+    url("https://liv.rent/blog/wp-content/uploads/2020/01/2020-02-03-RoommateLiving2-01-min.png")
+      auto;
+  background-size: cover;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: white;
+}
+
+.login .card .left h1 {
+  font-size: 50px;
+  line-height: 50px;
+  color: white;
+}
+
+.login .card .left span {
+  font-size: 14px;
+}
+
+.login .card .left {
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: white;
+  color: #1c14a9;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 9rem;
+}
+
+.login .card .right {
+  flex: 1;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+}
+
+.login .card .right h1 {
+  color: rgb(12, 10, 10);
+}
+
+.login .card .right form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.login .card .right form input {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  padding: 20px 10px;
+}
+
+.login .card .right form .login-button {
+  width: 50%;
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: #0c0c0e;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.login-input,
+#login-input1 {
+  border-radius: 1rem;
+  background-color: rgb(255, 255, 255);
+  height: 2px;
+  width: auto;
+  max-width: 300px;
+  font-size: 10.5px;
+}
+
+.login-input,
+#login-input1:focus {
+  background-color: rgb(69, 69, 67);
+  color: white;
+}
+
+.login-button {
+  margin-left: 8rem;
+  background-color: #1c14a9;
+}
+
+.login-button:hover {
+  background-color: rgb(237, 204, 154);
+}
+
+.login-image {
+  height: 200%;
+  width: 140%;
+  margin-left: 0rem;
+  margin-top: 5rem;
+}
+
+#btn {
+  border: none;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  text-decoration: underline;
+}
+
+#btn:hover {
+  color: blue;
+  text-decoration: underline;
+}
+#regi-ster {
+  margin-left: 6.7rem;
+}

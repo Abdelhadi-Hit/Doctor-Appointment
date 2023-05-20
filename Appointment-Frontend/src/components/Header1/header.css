@@ -1,0 +1,126 @@
+#header {
+    background: #fff;
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 0px 0 0 ;
+    top: 0px;
+    box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
+  }
+  
+  #header.header-scrolled {
+    top: 0px;
+  }
+  
+  
+  
+  #header .logo img {
+    max-height: 40px;
+   
+  }
+  
+  
+  
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+  /**
+  * Desktop Navigation 
+  */
+  
+
+  .bg-custom-1 {
+    background-color: #85144b;
+  }
+  
+  .bg-custom-2 {
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  }
+
+
+#k{
+    color: rgb(22, 102, 183);
+    margin-left: 7rem;
+    margin-top:0.3rem;
+    font-weight:700;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    
+}
+
+#k:hover{
+    color:rgb(25, 26, 27);
+    
+    
+}
+
+.wrrap{
+    display: flex ;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 14rem;
+    margin-right:20rem;
+    margin-top: 1rem;
+
+
+}
+
+.app-logo{
+    
+    border-radius: 25px ;
+    margin-bottom: 1rem;
+    
+   
+  
+
+    
+}
+
+#profile-wrapper{
+    background-color: #e7f5e8;
+    border-radius: 1rem;
+    margin-top: 0.4rem;
+}
+
+#navbarDropdownMenuLink{
+   
+    margin-top: 0rem;
+}
+
+.n-a{
+   
+}
+.n-a:hover{
+   color: black;
+   
+}
+
+.navbar{
+  margin-bottom: 0;
+  padding: 0;
+
+}
+
+
+#o{
+  color: rgb(255, 255, 255);
+  margin-left: 7rem;
+  margin-bottom:0.5rem;
+  font-weight:700;
+  font-size: small;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  background-color: #553d3d;
+  padding:0.7rem;
+  border-radius: 7px;
+  
+  
+}
+
+#o:hover{
+  background-color: #0b0b0c;
+}
+
+
+
+

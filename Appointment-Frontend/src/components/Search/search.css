@@ -1,0 +1,197 @@
+
+  
+  input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+ .search-btn{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 1px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .search-results{
+    
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 29%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(247, 247, 247);
+    border-radius:5px;
+    z-index: 100;
+    padding: 20px;
+    margin-left: 5rem;
+    margin-top:0.2rem;
+    
+    max-height: 250px;
+    overflow-y: scroll;
+    
+  }
+
+  .search-container{
+    position: relative;
+    margin-left: 40rem;
+   
+    
+    
+    
+  }
+
+  .search-li{
+    list-style: none;
+   
+    
+  }
+  
+
+.search-img{
+  width: 6rem;
+  height: 6rem;
+  border-radius: 3rem;
+  background-color: #4CAF50;
+}
+ 
+
+.search-username{
+  font-weight: 600;
+  color: blue;
+ 
+}
+
+.search-city{
+  color: rgb(121, 69, 24);
+  
+}
+
+.search-wrap{
+  display: flex;
+}
+
+.introSearch{
+  color: #aaacaa;
+  margin-top: 10rem;
+  margin-left: 13rem;
+  margin-right: 9rem;
+  align-items: center;
+}
+
+/*--------------------------------------------------------------
+# Doctors
+--------------------------------------------------------------*/
+.doctors {
+  background: #fff;
+  margin-top: 10rem;
+}
+
+.doctors .member {
+  position: relative;
+  box-shadow: 0px 2px 15px rgba(44, 73, 100, 0.08);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.doctors .member .pic {
+  overflow: hidden;
+  width: 180px;
+  border-radius: 50%;
+}
+
+.doctors .member .pic img {
+  transition: ease-in-out 0.3s;
+}
+
+.doctors .member:hover img {
+  transform: scale(1.1);
+}
+
+.doctors .member .member-info {
+  padding-left: 30px;
+}
+
+.doctors .member h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 20px;
+  color: #aaacaa;
+}
+
+.doctors .member span {
+  display: block;
+  font-size: 15px;
+  padding-bottom: 10px;
+  position: relative;
+  font-weight: 500;
+}
+
+.doctors .member span::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 1px;
+  background: #aaacaa;
+  bottom: 0;
+  left: 0;
+}
+
+.doctors .member p {
+  margin: 10px 0 0 0;
+  font-size: 14px;
+}
+
+.doctors .member .social {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.doctors .member .social a {
+  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  width: 32px;
+  height: 32px;
+  background:#000000;
+}
+
+.doctors .member .social a i {
+  color: #fff;
+  font-size: 16px;
+  margin: 0 2px;
+}
+
+.doctors .member .social a:hover {
+  background: #ded7d7;
+}
+
+.doctors .member .social a+a {
+  margin-left: 8px;
+}
+
+.doctor-pr{
+  margin-bottom: 4rem ;
+  color: rgb(56, 55, 55);
+  margin-left: 40rem
+}
+
+.spec{
+  color: #4CAF50;
+}
+
+.sec-par{
+  margin-left: 17rem;
+}
