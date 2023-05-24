@@ -16,15 +16,8 @@ function Appointment() {
   const [message, setMessage] = useState("");
   const [successful, setSuccessful] = useState(false);
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [city, setCity] = useState("");
-  const [tele, setTele] = useState("");
   const [id, setId] = useState("");
 
-  const [description, setDescription] = useState("");
-  const [liscence, setLiscence] = useState("");
   const [status, setStatus] = useState("Pending");
 
   const location = useLocation();
@@ -43,11 +36,7 @@ function Appointment() {
 
   const getUser = () => {
     const user = JSON.parse(localStorage.getItem("user"));
-    setName(user.username);
-    setCity(user.city);
-    setImageUrl(user.image);
-    setEmail(user.email);
-    setTele(user.tele);
+
     setId(user.id);
   };
 
@@ -59,12 +48,15 @@ function Appointment() {
     event.preventDefault();
     const Data = {
       date: date,
+      location: doc_docLocation,
+      docImage: doc_image,
+      docName: doc_name,
       time: time,
       docId: doc_id,
       patId: id,
       status: status,
     };
-    console.log(Data.Time);
+    console.log(Data);
     console.log(time);
     await axios
       .post("http://localhost:8084/api/v1/appointments", Data)
