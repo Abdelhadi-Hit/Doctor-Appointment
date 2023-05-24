@@ -20,6 +20,10 @@ public class Appointment {
 
     private Date date;
 
+    private String  location;
+    private String docImage;
+    private String docName;
+
     private String time;
 
     private String docId;
