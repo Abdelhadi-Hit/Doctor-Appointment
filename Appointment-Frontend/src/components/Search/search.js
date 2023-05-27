@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import back from "../img/doctorSearchBK.jpeg";
+
 import { Link } from "react-router-dom";
 
 import "./search.css";

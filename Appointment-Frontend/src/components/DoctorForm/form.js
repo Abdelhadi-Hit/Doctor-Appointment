@@ -15,6 +15,7 @@ const DoctorForm = () => {
   const [liscence, setLiscence] = useState("");
   const [location, setLocation] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
+  const [userId, setUserId] = useState("");
 
   const [message, setMessage] = useState("");
   const [successful, setSuccessful] = useState(false);
@@ -57,7 +58,10 @@ const DoctorForm = () => {
     setImageUrl(user.image);
     setEmail(user.email);
     setTele(user.tele);
+    setUserId(user.id);
   };
+
+  console.log(typeof userId);
 
   useEffect(() => {
     getUser();
