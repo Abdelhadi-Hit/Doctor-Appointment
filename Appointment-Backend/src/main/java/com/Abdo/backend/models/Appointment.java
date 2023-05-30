@@ -26,6 +26,9 @@ public class Appointment {
 
     private String docName;
 
+    private String patImage;
+    private String patName;
+
     private String time;
 
     private String docId;
@@ -33,5 +36,6 @@ public class Appointment {
     private String patId;
 
     private String status;
+
 
 }

@@ -71,7 +71,7 @@ public class WebSecurityConfig {
                 .requestMatchers("/api/v1/rooms/**").permitAll()
                 .requestMatchers("/roommates/**").permitAll()
                 .requestMatchers("/api/v1/**").permitAll()
-                .requestMatchers("/api/v1/doctors/doctor").permitAll()
+                .requestMatchers("/api/v1/doctors/doctor/**").permitAll()
                 .requestMatchers("/api/v1/appointments/maker/**").permitAll()
                 .requestMatchers("/api/v1/appointments/doctor/**").permitAll()
                 .anyRequest().authenticated();

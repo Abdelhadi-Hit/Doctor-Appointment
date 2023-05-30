@@ -23,6 +23,8 @@ public class Doctor {
     @Id
     private String id;
 
+    private String docId;
+
     private int tele;
     private String imageUrl;
     @NotBlank
@@ -80,6 +82,7 @@ public class Doctor {
         this.liscence = liscence;
         this.availability = availability;
         this.location = location;
+
 
 
     }

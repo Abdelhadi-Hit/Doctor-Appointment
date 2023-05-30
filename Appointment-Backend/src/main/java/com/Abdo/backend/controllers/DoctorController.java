@@ -36,9 +36,14 @@ public class DoctorController {
 
 
     @GetMapping("/search")
-    public List<Doctor> searchDoctors(@RequestParam (required = false) String query) {
+    public List<Doctor> searchDoctors(@RequestParam (required = false) String query,@RequestParam(required = false) String userId ) {
         List<Doctor> results = doctorRepo.findBySpecializationContainingIgnoreCaseOrNameContainingIgnoreCaseOrCityContainingIgnoreCase(query,query,query);
-
+        User user = userService.getUserById(userId);
+        System.out.println(user.getUsername());
+        if (userId != null && user.is_doctor()) {
+            // If the user is a doctor, exclude them from the search results
+            results.removeIf(doctor -> doctor.getName().equals(user.getUsername()) && doctor.getEmail().equals(user.getEmail()));
+        }
         return results;
 
 
@@ -49,11 +54,17 @@ public class DoctorController {
     }
 
 
+
+
    @PostMapping("/doctor")
-    public ResponseEntity<?> createDoctor( @RequestBody Doctor doc){
-        //User user = userService.getUserById(userId);
-        //user.set_doctor(true);
+    public ResponseEntity<?> createDoctor( @RequestBody Doctor doc, @RequestParam("userId") String userId){
+        User user = userService.getUserById(userId);
+        user.set_doctor(true);
+       // System.out.println(user.is_doctor());
+        userService.updateUser(user);
+
         Doctor doctor = new Doctor(doc.getName(),doc.getEmail(),doc.getTele(),doc.getImageUrl(),doc.getCity(),doc.getSpecialization(),doc.getDescription(),doc.getLiscence(),doc.getAvailability(),doc.getLocation());
+        doctor.setDocId(userId);
        LocalDate currentDate = LocalDate.now();
        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMM yyyy");
        String joinDate = currentDate.format(formatter);
