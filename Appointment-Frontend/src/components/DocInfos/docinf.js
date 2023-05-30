@@ -14,7 +14,7 @@ function DoctorInfos() {
     docLocation,
     specialization,
     phone,
-    id,
+    docId,
   } = location.state;
   console.log(location.state);
 
@@ -68,7 +68,7 @@ function DoctorInfos() {
             doc_docLocation: docLocation,
             doc_specialization: specialization,
             doc_phone: phone,
-            doc_id: id,
+            docId: docId,
           }}
         >
           Book Now

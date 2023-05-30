@@ -15,6 +15,8 @@ function Appointment() {
   const [time, setTime] = useState("");
   const [message, setMessage] = useState("");
   const [successful, setSuccessful] = useState(false);
+  const [patImage, setPatImage] = useState("");
+  const [patName, setPatName] = useState("");
 
   const [id, setId] = useState("");
 
@@ -30,7 +32,7 @@ function Appointment() {
     doc_docLocation,
     doc_specialization,
     doc_phone,
-    doc_id,
+    docId,
   } = location.state;
   console.log(location.state);
 
@@ -38,6 +40,8 @@ function Appointment() {
     const user = JSON.parse(localStorage.getItem("user"));
 
     setId(user.id);
+    setPatImage(user.image);
+    setPatName(user.username);
   };
 
   useEffect(() => {
@@ -51,8 +55,10 @@ function Appointment() {
       location: doc_docLocation,
       docImage: doc_image,
       docName: doc_name,
+      patImage: patImage,
+      patName: patName,
       time: time,
-      docId: doc_id,
+      docId: docId,
       patId: id,
       status: status,
     };
@@ -61,6 +67,8 @@ function Appointment() {
     await axios
       .post("http://localhost:8084/api/v1/appointments", Data)
       .then((response) => {
+        console.log(Data);
+        console.log("££££");
         console.log(response.data);
         console.log("yeeeeeeah");
         setSuccessful(true);

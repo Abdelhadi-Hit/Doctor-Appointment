@@ -61,6 +61,13 @@ const DoctorForm = () => {
     setUserId(user.id);
   };
 
+  const setUserAsDoctor = () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    user._doctor = true;
+    console.log(user._doctor);
+    localStorage.setItem("user", JSON.stringify(user));
+  };
+
   console.log(typeof userId);
 
   useEffect(() => {
@@ -71,7 +78,7 @@ const DoctorForm = () => {
     event.preventDefault();
 
     await axios
-      .post("http://localhost:8084/api/v1/doctors/doctor", {
+      .post(`http://localhost:8084/api/v1/doctors/doctor?userId=${userId}`, {
         name,
         email,
         tele,
@@ -85,6 +92,8 @@ const DoctorForm = () => {
       .then((response) => {
         console.log(response.data);
         setSuccessful(true);
+        setUserAsDoctor();
+
         setMessage(response.data.message);
       })
       .catch((error) => {

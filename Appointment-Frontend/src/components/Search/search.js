@@ -26,6 +26,11 @@ const Search = () => {
     document.body.style.backgroundSize = "cover";
   }, []);
 
+  const user = JSON.parse(localStorage.getItem("user"));
+  let id = user.id;
+
+  console.log(id);
+
   const search = async () => {
     const currentSearchTerm = searchTerm.trim();
 
@@ -44,9 +49,12 @@ const Search = () => {
 
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
-      const response = await axios.get(`${API_ENDPOINT}?query=${searchTerm}`, {
-        cancelToken: cancelToken.current.token,
-      });
+      const response = await axios.get(
+        `${API_ENDPOINT}?query=${searchTerm}&userId=${id}`,
+        {
+          cancelToken: cancelToken.current.token,
+        }
+      );
 
       const results = response.data;
       setSearchResults(results);
@@ -117,7 +125,7 @@ const Search = () => {
                       docLocation: item.location,
                       specialization: item.specialization,
                       phone: item.tele,
-                      id: item.id,
+                      docId: item.docId,
                     }}
                   >
                     {item.name}{" "}
