@@ -64,7 +64,7 @@ const DoctorForm = () => {
   const setUserAsDoctor = () => {
     const user = JSON.parse(localStorage.getItem("user"));
     user._doctor = true;
-    console.log(user._doctor);
+    //console.log(user._doctor);
     localStorage.setItem("user", JSON.stringify(user));
   };
 
