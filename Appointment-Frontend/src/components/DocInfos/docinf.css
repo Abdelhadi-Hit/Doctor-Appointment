@@ -103,3 +103,22 @@
   color: green;
   margin-left: 5px;
 }
+
+.commentary {
+  background-color: rgb(213, 213, 213);
+  margin-top: 1rem;
+  max-width: 40rem;
+  justify-content: center;
+  border-radius: 1rem;
+  max-height: fit-content;
+
+  padding: 1rem;
+}
+
+.com-search {
+  margin: 0 auto;
+}
+
+.com-info {
+  margin-left: 3rem;
+}
