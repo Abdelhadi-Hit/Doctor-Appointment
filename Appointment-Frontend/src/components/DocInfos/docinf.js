@@ -2,8 +2,31 @@ import { useLocation } from "react-router-dom";
 import Header from "../Header1/header";
 import { Link } from "react-router-dom";
 import "./docinf.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
+const API_ENDPOINT = "http://localhost:8084/api/v1";
 
 function DoctorInfos() {
+  const [commentary, setCommentary] = useState([]);
+  const [comment, setComment] = useState("");
+  let body = comment;
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+
+  const handleCommentChange = (event) => {
+    setComment(event.target.value);
+  };
+
+  function verifyJavaScriptCode(text) {
+    try {
+      eval(text);
+      return true;
+    } catch (error) {
+      return false;
+    }
+  }
+
   const location = useLocation();
   const {
     name,
@@ -17,6 +40,53 @@ function DoctorInfos() {
     docId,
   } = location.state;
   console.log(location.state);
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  let writerId = user.id;
+  let writerName = user.username;
+  let writerImage = user.image;
+
+  useEffect(() => {
+    const fetchCommentary = async () => {
+      try {
+        const response = await fetch(`${API_ENDPOINT}/comments/${docId}`);
+        const data = await response.json();
+        setCommentary(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchCommentary();
+  }, [comment]);
+
+  console.log(commentary);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post(`${API_ENDPOINT}/comment`, {
+        body,
+        writerId,
+        docId,
+        writerImage,
+        writerName,
+      });
+
+      console.log(response.data);
+      setMessage(response.data.message);
+      setComment("");
+    } catch (error) {
+      console.error(error);
+      setError(error.response.data.message);
+    }
+  };
+
+  setTimeout(() => {
+    setMessage("");
+    setError("");
+  }, 3000);
 
   return (
     <>
@@ -73,6 +143,76 @@ function DoctorInfos() {
         >
           Book Now
         </Link>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+
+        <div className="com-search">
+          <h3 style={{ marginTop: "10rem" }}>Reviews/Comments</h3>
+
+          <form onSubmit={handleSubmit}>
+            <input type="text" value={comment} onChange={handleCommentChange} />
+            <button
+              style={{
+                backgroundColor: "blue",
+
+                marginLeft: "1rem",
+                color: "white",
+              }}
+              type="submit"
+            >
+              Comment..
+            </button>
+            {message && (
+              <div className="alert alert-success" role="alert">
+                {message}
+              </div>
+            )}
+            {error && (
+              <div className="alert alert-danger" role="alert">
+                {error}
+              </div>
+            )}
+          </form>
+
+          <div>
+            {commentary &&
+              commentary.map((review) => (
+                <div className="commentary" key={review.id}>
+                  <div>
+                    <img
+                      style={{
+                        height: "2rem",
+                        width: "2rem",
+                        borderRadius: "1rem",
+                      }}
+                      src={review.writerImage}
+                    />
+                    <h>{review.writerName}</h>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexdirection: "column",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <p style={{ color: "blue", marginTop: "0.5rem" }}>
+                        📆{" "}
+                        {new Date(review.timeOfCreation).toLocaleDateString()}
+                      </p>
+                      <p style={{ marginTop: "0.5rem" }}>
+                        ⏱ {new Date(review.timeOfCreation).toLocaleTimeString()}
+                      </p>
+                    </div>
+                  </div>
+                  <p>{review.body}</p>
+                  <br></br>
+                </div>
+              ))}
+          </div>
+        </div>
       </div>
     </>
   );
