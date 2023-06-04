@@ -48,7 +48,6 @@ const Table = () => {
         `http://localhost:8084/api/v1/appointments/${appointmentId}`
       );
 
-      trigger += 1;
       fetchAppointments();
     } catch (error) {
       console.log(error);
@@ -60,7 +59,7 @@ const Table = () => {
       await axios.put(
         `http://localhost:8084/api/v1/appointments/status/${appointmentId}`
       );
-      trigger += 1;
+
       fetchAppointments();
     } catch (error) {
       console.log(error);
@@ -96,8 +95,21 @@ const Table = () => {
                   appointments.map((appointment) => (
                     <tr key={appointment.appId}>
                       <th scope="row">
-                        <div style={{ marginTop: "1.3rem" }}>
-                          {appointment.date}
+                        <div
+                          style={{
+                            marginTop: "1.3rem",
+                            display: "flex",
+                            flexDirection: "row",
+                          }}
+                        >
+                          <p>
+                            {" "}
+                            {new Date(appointment.date).toLocaleDateString()}
+                          </p>
+                          <p style={{ color: "blue", marginLeft: "9rem" }}>
+                            {" "}
+                            At {appointment.time}
+                          </p>
                         </div>
                       </th>
                       <td>
