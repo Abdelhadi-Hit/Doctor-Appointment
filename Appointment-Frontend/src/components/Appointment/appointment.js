@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import TimePicker from "react-time-picker";
 import "react-datepicker/dist/react-datepicker.css";
 import "react-time-picker/dist/TimePicker.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import "./appointment.css";
@@ -17,6 +17,7 @@ function Appointment() {
   const [successful, setSuccessful] = useState(false);
   const [patImage, setPatImage] = useState("");
   const [patName, setPatName] = useState("");
+  const navigate = useNavigate("");
 
   const [id, setId] = useState("");
 
@@ -68,16 +69,18 @@ function Appointment() {
       .post("http://localhost:8084/api/v1/appointments", Data)
       .then((response) => {
         console.log(Data);
-        console.log("££££");
-        console.log(response.data);
-        console.log("yeeeeeeah");
+
         setSuccessful(true);
         setMessage(response.data.message);
         console.log(response.data);
+        setTimeout(() => {
+          navigate("/board");
+        }, 2000);
       })
       .catch((error) => {
         console.log(error);
         setSuccessful(false);
+        setMessage(error.response.data.message);
       });
 
     setTimeout(() => {
@@ -113,10 +116,18 @@ function Appointment() {
           onChange={(newTime) => setTime(newTime)}
           disableClock={true}
         />
+        <br></br>
 
         {message && (
-          <div className="alert alert-success" role="alert">
-            {message}
+          <div className="form-group">
+            <div
+              className={
+                successful ? "alert alert-success" : "alert alert-danger"
+              }
+              role="alert"
+            >
+              {message}
+            </div>
           </div>
         )}
         <button className="val-book" type="submit">

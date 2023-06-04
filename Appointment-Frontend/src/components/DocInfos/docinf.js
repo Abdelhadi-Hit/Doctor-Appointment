@@ -182,15 +182,22 @@ function DoctorInfos() {
               commentary.map((review) => (
                 <div className="commentary" key={review.id}>
                   <div>
-                    <img
-                      style={{
-                        height: "2rem",
-                        width: "2rem",
-                        borderRadius: "1rem",
-                      }}
-                      src={review.writerImage}
-                    />
-                    <h>{review.writerName}</h>
+                    <div style={{ display: "flex", flexDirection: "row" }}>
+                      <img
+                        style={{
+                          height: "2rem",
+                          width: "2rem",
+                          borderRadius: "1rem",
+                        }}
+                        src={review.writerImage}
+                      />
+                      <p
+                        style={{ marginLeft: "0.5rem", marginTop: "0.266rem" }}
+                      >
+                        {review.writerName}
+                      </p>
+                    </div>
+
                     <div
                       style={{
                         display: "flex",

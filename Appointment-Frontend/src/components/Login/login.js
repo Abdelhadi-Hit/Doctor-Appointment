@@ -89,7 +89,7 @@ const Login = () => {
             </button>
             {err && (
               <div
-                style={{ marginLeft: "10rem", marginRight: "9rem" }}
+                style={{ marginLeft: "0rem", marginRight: "9rem" }}
                 className="alert alert-danger"
                 role="alert"
               >

@@ -10,3 +10,14 @@ td,
 th {
   vertical-align: middle;
 }
+
+.tb-title {
+  color: rgb(110, 108, 105);
+  margin-left: 5rem;
+  font-size: medium;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#btn-c {
+  margin-top: 0.8rem;
+}

@@ -90,13 +90,13 @@ const Header = () => {
                     fontWeight: "bold",
                     fontSize: "1.5rem",
                     fontFamily: "sans-serif",
-                    marginLeft: "2rem",
+                    marginLeft: "1rem",
                     color: "blue",
                   }}
                 >
                   {CurrentUser.username}
                 </p>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="/board">
                   Dashboard
                 </a>
                 <a class="dropdown-item" href="#">

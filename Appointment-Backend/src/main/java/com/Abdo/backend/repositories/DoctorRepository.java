@@ -10,6 +10,8 @@ public interface DoctorRepository extends MongoRepository<Doctor,String> {
     List<Doctor> findByNameContainingIgnoreCase(String name);
     List<Doctor> findByCityContainingIgnoreCase(String city);
 
+    Doctor findByDocId(String docId);
+
 
     List<Doctor> findBySpecializationContainingIgnoreCaseOrNameContainingIgnoreCaseOrCityContainingIgnoreCase(String sprcialization, String name, String city);
 }
